@@ -4,10 +4,12 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <tuple>
 
 
 
-template<typename T, typename U = typename std::enable_if_t<!std::is_same_v<std::basic_string<char>, T>, void>>
+
+template<typename T, typename = typename std::enable_if_t<!std::is_same_v<std::basic_string<char>, T>, void>>
 decltype(std::declval<T>().begin(), std::declval<T>().end(), void()) print_ip(const T& Conteiner)
 {
     for(auto it = Conteiner.begin(); it != Conteiner.end(); ++it)
@@ -21,21 +23,31 @@ decltype(std::declval<T>().begin(), std::declval<T>().end(), void()) print_ip(co
     std::cout<<std::endl;
 }
 
-template<typename T, typename U = typename std::enable_if_t<std::is_same_v<std::basic_string<char>, T>, void>>
-void print_ip(const T& value)
+template<typename T>
+decltype(std::declval<T>().c_str(), void()) print_ip(const T& value)
 {
     std::cout << value << std::endl;
 }
 
-template<typename T, typename U = typename std::enable_if_t<std::is_integral_v<T>>, typename = void>
-void print_ip(const T& ival)
+template<typename T, typename = typename std::enable_if_t<std::is_integral_v<T>>>
+decltype(std::declval<T>(), void()) print_ip(const T& ival)
 {
-    std::cout <<"intergarl" << ival <<std::endl;
-    char* byte = reinterpret_cast<char*>(ival);
-    for(std::size_t i = 0; i < sizeof(T); ++i)
+    T value = std::remove_cv_t<T>(ival);
+    
+    unsigned char* byte = reinterpret_cast<unsigned char*>(&value);
+    byte += sizeof(T)-1;
+    for(std::size_t i = sizeof(T); i > 0 ; --i)
     {
-        std::cout<< byte <<".";
-        ++byte;
+        if(i != sizeof(T))
+            std::cout<< ".";
+        std::cout<< static_cast<int>(*byte);
+        --byte;
     }
     std::cout<< std::endl;
+}
+
+template<typename... Args>
+void print_ip(std::tuple<Args...>&& tupl)
+{
+    std::cout << (std::forward<Args>(tupl), ...) << std::endl;
 }
