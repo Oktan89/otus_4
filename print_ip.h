@@ -46,8 +46,29 @@ decltype(std::declval<T>(), void()) print_ip(const T& ival)
     std::cout<< std::endl;
 }
 
-template<typename... Args>
-void print_ip(std::tuple<Args...>&& tupl)
+template<typename T, std::size_t N>
+struct printtuple
 {
-    std::cout << (std::forward<Args>(tupl), ...) << std::endl;
+    static void print(const T& tuple)
+    {
+        printtuple<T, N-1>::print(tuple);
+        std::cout << "." << std::get<N-1>(tuple);
+               
+    }
+};
+
+template<typename T>
+struct printtuple<T, 1>
+{
+    static void print(const T& tuple)
+    {
+        std::cout << std::get<0>(tuple);
+    }
+};
+
+template<typename... T>
+void print_ip([[maybe_unused]] std::tuple<T...>&& args)
+{  
+    printtuple<decltype(args), sizeof...(T)>::print(args);
+    std::cout << std::endl;
 }
