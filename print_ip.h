@@ -53,7 +53,7 @@ struct printtuple
     {
         printtuple<T, N-1>::print(tuple);
         std::cout << "." << std::get<N-1>(tuple);
-               
+        // std::cout <<"\n"<<"print" << __PRETTY_FUNCTION__ << "\n";
     }
 };
 
@@ -61,14 +61,18 @@ template<typename T>
 struct printtuple<T, 1>
 {
     static void print(const T& tuple)
-    {
+    {   
         std::cout << std::get<0>(tuple);
+        //  std::cout <<"\n"<<"print" << __PRETTY_FUNCTION__ << "\n";
     }
 };
 
+
 template<typename... T>
-void print_ip([[maybe_unused]] std::tuple<T...>&& args)
+void print_ip(std::tuple<T...> args)
 {  
+    
+    // std::cout <<"\n"<<"print" << __PRETTY_FUNCTION__ << "\n";
     printtuple<decltype(args), sizeof...(T)>::print(args);
     std::cout << std::endl;
 }

@@ -14,7 +14,9 @@ int main(int, char**)
     print_ip( std::vector<int>{100, 200, 300, 400} ); // 100.200.300.400
     print_ip( std::list<short>{400, 300, 200, 100} ); // 400.300.200.100
     print_ip( std::make_tuple(123, 456, 789, 0) ); // 123.456.789.0
-    print_ip( std::make_tuple(123, "test", 789, 0) );
+   
+//    auto te = std::make_tuple(1, 2, 3);
+//     print_ip( te );
 
     return 0;
 }
