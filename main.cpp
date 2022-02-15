@@ -1,7 +1,16 @@
+/**
+ * @file main.cpp
+ * @author Ruslan Zhigalenko (r.zhigalenko@mail.ru)
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-16
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <iostream>
 #include <tuple>
 #include "print_ip.h"
-
 
 int main(int, char**)
  {  

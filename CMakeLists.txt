@@ -5,7 +5,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(print VERSION ${PROJECT_VESRION})
 
-option(WITH_GOOGLE_TEST "Whether to build Google tets" OFF)
+option(WITH_GOOGLE_TEST "Whether to build Google tets" ON)
 
 configure_file(version.h.in version.h)
 
@@ -27,6 +27,7 @@ target_link_libraries(print_ip PRIVATE
 
 if(WITH_GOOGLE_TEST)
 #git submodule add https://github.com/google/googletest.git
+#git submodule update --init --recursive
     add_subdirectory(./googletest EXCLUDE_FROM_ALL)
     add_executable(google_test_version test_version_g.cpp)
 
