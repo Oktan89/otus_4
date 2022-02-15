@@ -49,7 +49,8 @@ decltype(std::declval<T>(), void()) print_ip(const T& ival)
 template<typename T, std::size_t N>
 struct printtuple
 {
-    static void print(const T& tuple)
+    static std::enable_if_t<std::is_same_v<std::tuple_element_t<N-1, T>, int>, void> 
+    print(const T& tuple)
     {
         printtuple<T, N-1>::print(tuple);
         std::cout << "." << std::get<N-1>(tuple);
@@ -60,7 +61,8 @@ struct printtuple
 template<typename T>
 struct printtuple<T, 1>
 {
-    static void print(const T& tuple)
+    static std::enable_if_t<std::is_same_v<std::tuple_element_t<0, T>, int>, void>
+    print(const T& tuple)
     {   
         std::cout << std::get<0>(tuple);
         //  std::cout <<"\n"<<"print" << __PRETTY_FUNCTION__ << "\n";
@@ -71,8 +73,7 @@ struct printtuple<T, 1>
 template<typename... T>
 void print_ip(std::tuple<T...> args)
 {  
-    
-    // std::cout <<"\n"<<"print" << __PRETTY_FUNCTION__ << "\n";
+     // std::cout <<"\n"<<"print" << __PRETTY_FUNCTION__ << "\n";
     printtuple<decltype(args), sizeof...(T)>::print(args);
     std::cout << std::endl;
 }
