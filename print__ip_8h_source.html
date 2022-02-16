@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Print IP: Исходный файл print_ip.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Print IP<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Функция печати условного IP-адреса.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">print_ip.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="print__ip_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keyword">typename</span> std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;T&gt;&gt;&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="print__ip_8h.html#adefcc43acd12329616e828ed42a7afcc">   36</a></span><span class="keyword">decltype</span>(std::declval&lt;T&gt;(), void()) <a class="code hl_function" href="print__ip_8h.html#adefcc43acd12329616e828ed42a7afcc">print_ip</a>(<span class="keyword">const</span> T&amp; ival)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    T value = std::remove_cv_t&lt;T&gt;(ival);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <span class="keywordtype">byte</span> = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;value);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">byte</span> += <span class="keyword">sizeof</span>(T)-1;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">for</span>(std::size_t i = <span class="keyword">sizeof</span>(T); i &gt; 0 ; --i)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span>(i != <span class="keyword">sizeof</span>(T))</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            std::cout&lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        std::cout&lt;&lt; static_cast&lt;int&gt;(*<span class="keywordtype">byte</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        --byte;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::cout&lt;&lt; std::endl;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keyword">typename</span> std::enable_if_t&lt;!std::is_same_v&lt;std::basic_<span class="keywordtype">string</span>&lt;<span class="keywordtype">char</span>&gt;, T&gt;, <span class="keywordtype">void</span>&gt;&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a7e46c91c9dc92fb769d8481b2b945c06">   63</a></span><span class="keyword">decltype</span>(std::declval&lt;T&gt;().begin(), std::declval&lt;T&gt;().end(), void()) <a class="code hl_function" href="print__ip_8h.html#adefcc43acd12329616e828ed42a7afcc">print_ip</a>(<span class="keyword">const</span> T&amp; Conteiner)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = Conteiner.begin(); it != Conteiner.end(); ++it)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">if</span>(it != Conteiner.begin())</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            std::cout &lt;&lt;<span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        std::cout &lt;&lt; *it; </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="print__ip_8h.html#ac31e53f19834670c8bf247fb42103457">   86</a></span><span class="keyword">decltype</span>(std::declval&lt;T&gt;().c_str(), void()) <a class="code hl_function" href="print__ip_8h.html#adefcc43acd12329616e828ed42a7afcc">print_ip</a>(<span class="keyword">const</span> T&amp; value)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    std::cout &lt;&lt; value &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structprinttuple.html">   98</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structprinttuple.html">printtuple</a></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">static</span> std::enable_if_t&lt;std::is_same_v&lt;std::tuple_element_t&lt;N-1, T&gt;, <span class="keywordtype">int</span>&gt;, <span class="keywordtype">void</span>&gt; </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="structprinttuple.html#a881b68cec7d0db0488fae4c563a1fce3">  101</a></span>    <a class="code hl_function" href="structprinttuple.html#a881b68cec7d0db0488fae4c563a1fce3">print</a>(<span class="keyword">const</span> T&amp; tuple)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_function" href="structprinttuple.html#a881b68cec7d0db0488fae4c563a1fce3">printtuple&lt;T, N-1&gt;::print</a>(tuple);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; std::get&lt;N-1&gt;(tuple);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="comment">// std::cout &lt;&lt;&quot;\n&quot;&lt;&lt;&quot;print&quot; &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>};</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="structprinttuple_3_01_t_00_011_01_4.html">  115</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structprinttuple.html">printtuple</a>&lt;T, 1&gt;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">static</span> std::enable_if_t&lt;std::is_same_v&lt;std::tuple_element_t&lt;0, T&gt;, <span class="keywordtype">int</span>&gt;, <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="structprinttuple_3_01_t_00_011_01_4.html#a6d070ac90a81e79f87c78a8f093583fc">  118</a></span>    <a class="code hl_function" href="structprinttuple_3_01_t_00_011_01_4.html#a6d070ac90a81e79f87c78a8f093583fc">print</a>(<span class="keyword">const</span> T&amp; tuple)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    {   </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        std::cout &lt;&lt; std::get&lt;0&gt;(tuple);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="comment">//  std::cout &lt;&lt;&quot;\n&quot;&lt;&lt;&quot;print&quot; &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... T&gt;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a3722e44da877f49ee4d8107c068acf87">  135</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="print__ip_8h.html#adefcc43acd12329616e828ed42a7afcc">print_ip</a>(std::tuple&lt;T...&gt; args)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>{  </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>     <span class="comment">// std::cout &lt;&lt;&quot;\n&quot;&lt;&lt;&quot;print&quot; &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_struct" href="structprinttuple.html">printtuple</a>&lt;<span class="keyword">decltype</span>(args), <span class="keyword">sizeof</span>...(T)&gt;::print(args);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
+<div class="ttc" id="aprint__ip_8h_html_adefcc43acd12329616e828ed42a7afcc"><div class="ttname"><a href="print__ip_8h.html#adefcc43acd12329616e828ed42a7afcc">print_ip</a></div><div class="ttdeci">decltype(std::declval&lt; T &gt;(), void()) print_ip(const T &amp;ival)</div><div class="ttdoc">Реализация печати целочисленного типа</div><div class="ttdef"><b>Definition:</b> print_ip.h:36</div></div>
+<div class="ttc" id="astructprinttuple_3_01_t_00_011_01_4_html_a6d070ac90a81e79f87c78a8f093583fc"><div class="ttname"><a href="structprinttuple_3_01_t_00_011_01_4.html#a6d070ac90a81e79f87c78a8f093583fc">printtuple&lt; T, 1 &gt;::print</a></div><div class="ttdeci">static std::enable_if_t&lt; std::is_same_v&lt; std::tuple_element_t&lt; 0, T &gt;, int &gt;, void &gt; print(const T &amp;tuple)</div><div class="ttdef"><b>Definition:</b> print_ip.h:118</div></div>
+<div class="ttc" id="astructprinttuple_html"><div class="ttname"><a href="structprinttuple.html">printtuple</a></div><div class="ttdoc">Шаг рекурсии вывода элементов кортежа с проверкой в compile time.</div><div class="ttdef"><b>Definition:</b> print_ip.h:99</div></div>
+<div class="ttc" id="astructprinttuple_html_a881b68cec7d0db0488fae4c563a1fce3"><div class="ttname"><a href="structprinttuple.html#a881b68cec7d0db0488fae4c563a1fce3">printtuple::print</a></div><div class="ttdeci">static std::enable_if_t&lt; std::is_same_v&lt; std::tuple_element_t&lt; N-1, T &gt;, int &gt;, void &gt; print(const T &amp;tuple)</div><div class="ttdoc">‍Проверка в compile time типов элементов кортежа</div><div class="ttdef"><b>Definition:</b> print_ip.h:101</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

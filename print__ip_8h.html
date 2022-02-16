@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Print IP: Файл print_ip.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Print IP<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Функция печати условного IP-адреса.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл print_ip.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Заголовочный файл с определением перегрузок шаблонной функции  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для print_ip.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="print__ip_8h__incl.png" border="0" usemap="#aprint__ip_8h" alt=""/></div>
+<map name="aprint__ip_8h" id="aprint__ip_8h">
+<area shape="rect" title="Заголовочный файл с определением перегрузок шаблонной функции" alt="" coords="239,5,313,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
+<area shape="rect" title=" " alt="" coords="112,80,184,107"/>
+<area shape="rect" title=" " alt="" coords="209,80,263,107"/>
+<area shape="rect" title=" " alt="" coords="288,80,347,107"/>
+<area shape="rect" title=" " alt="" coords="370,80,409,107"/>
+<area shape="rect" title=" " alt="" coords="433,80,484,107"/>
+</map>
+</div>
+</div>
+<p><a href="print__ip_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprinttuple.html">printtuple&lt; T, N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шаг рекурсии вывода элементов кортежа с проверкой в compile time.  <a href="structprinttuple.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprinttuple_3_01_t_00_011_01_4.html">printtuple&lt; T, 1 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Базовый случай рекурсии вывода элементов кортежа  <a href="structprinttuple_3_01_t_00_011_01_4.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:adefcc43acd12329616e828ed42a7afcc"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = typename std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:adefcc43acd12329616e828ed42a7afcc"><td class="memTemplItemLeft" align="right" valign="top">decltype(std::declval&lt; T &gt;(), void())&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#adefcc43acd12329616e828ed42a7afcc">print_ip</a> (const T &amp;ival)</td></tr>
+<tr class="memdesc:adefcc43acd12329616e828ed42a7afcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реализация печати целочисленного типа  <a href="print__ip_8h.html#adefcc43acd12329616e828ed42a7afcc">Подробнее...</a><br /></td></tr>
+<tr class="separator:adefcc43acd12329616e828ed42a7afcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e46c91c9dc92fb769d8481b2b945c06"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = typename std::enable_if_t&lt;!std::is_same_v&lt;std::basic_string&lt;char&gt;, T&gt;, void&gt;&gt; </td></tr>
+<tr class="memitem:a7e46c91c9dc92fb769d8481b2b945c06"><td class="memTemplItemLeft" align="right" valign="top">decltype(std::declval&lt; T &gt;().begin(), std::declval&lt; T &gt;().end(), void())&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a7e46c91c9dc92fb769d8481b2b945c06">print_ip</a> (const T &amp;Conteiner)</td></tr>
+<tr class="memdesc:a7e46c91c9dc92fb769d8481b2b945c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реализация печати контейнеров  <a href="print__ip_8h.html#a7e46c91c9dc92fb769d8481b2b945c06">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7e46c91c9dc92fb769d8481b2b945c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac31e53f19834670c8bf247fb42103457"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac31e53f19834670c8bf247fb42103457"><td class="memTemplItemLeft" align="right" valign="top">decltype(std::declval&lt; T &gt;().c_str(), void())&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ac31e53f19834670c8bf247fb42103457">print_ip</a> (const T &amp;value)</td></tr>
+<tr class="memdesc:ac31e53f19834670c8bf247fb42103457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реализация печати std::string.  <a href="print__ip_8h.html#ac31e53f19834670c8bf247fb42103457">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac31e53f19834670c8bf247fb42103457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3722e44da877f49ee4d8107c068acf87"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
+<tr class="memitem:a3722e44da877f49ee4d8107c068acf87"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a3722e44da877f49ee4d8107c068acf87">print_ip</a> (std::tuple&lt; T... &gt; args)</td></tr>
+<tr class="memdesc:a3722e44da877f49ee4d8107c068acf87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перегрузка для std::tuple.  <a href="print__ip_8h.html#a3722e44da877f49ee4d8107c068acf87">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3722e44da877f49ee4d8107c068acf87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Заголовочный файл с определением перегрузок шаблонной функции </p>
+<dl class="section author"><dt>Автор</dt><dd>Ruslan Zhigalenko (<a href="#" onclick="location.href='mai'+'lto:'+'r.z'+'hi'+'gal'+'en'+'ko@'+'ma'+'il.'+'ru'; return false;">r.zhi<span class="obfuscator">.nosp@m.</span>gale<span class="obfuscator">.nosp@m.</span>nko@m<span class="obfuscator">.nosp@m.</span>ail.<span class="obfuscator">.nosp@m.</span>ru</a>) </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2022-02-16</dd></dl>
+<dl class="section copyright"><dt>Авторство</dt><dd>Copyright (c) 2022</dd></dl>
+<p>Файл содержит функцию печати условного IP-адреса. Условность его заключается в том, что количество элементов не обязательно должно быть равно 4- ём или 8-ми, а также каждый элемент не обязательно должен быть числом из диапазона 0..255. От идеи IP-адреса остаётся фактически только вывод элементов через <code>.</code> (символ точки).</p>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Функция реализована через механизм SFINAE </dd></dl>
+</div><h2 class="groupheader">Функции</h2>
+<a id="a7e46c91c9dc92fb769d8481b2b945c06" name="a7e46c91c9dc92fb769d8481b2b945c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e46c91c9dc92fb769d8481b2b945c06">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename  = typename std::enable_if_t&lt;!std::is_same_v&lt;std::basic_string&lt;char&gt;, T&gt;, void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(std::declval&lt; T &gt;().begin(), std::declval&lt; T &gt;().end(), void()) print_ip </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>Conteiner</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Реализация печати контейнеров </p>
+<p >Адрес может быть представлен в виде контейнеров <code>std::list</code>, <code>std::vector</code>. Выводится полное содержимое контейнера поэлементно и разделяется <code>.</code> (символом точка). Элементы выводятся как есть.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Conteiner</td><td>Любой контейнер </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adefcc43acd12329616e828ed42a7afcc" name="adefcc43acd12329616e828ed42a7afcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adefcc43acd12329616e828ed42a7afcc">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename  = typename std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(std::declval&lt; T &gt;(), void()) print_ip </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>ival</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Реализация печати целочисленного типа </p>
+<p >Адрес может быть представлен в виде произвольного целочисленного типа. Выводить побайтово в беззнаковом виде, начиная со старшего байта, с символом <code>.</code> (символ точки)</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ival</td><td>интегральный тип </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac31e53f19834670c8bf247fb42103457" name="ac31e53f19834670c8bf247fb42103457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac31e53f19834670c8bf247fb42103457">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(std::declval&lt; T &gt;().c_str(), void()) print_ip </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Реализация печати std::string. </p>
+<p >Адрес может быть представлен в виде строки. Выводится как есть, вне зависимости от содержимого.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>std::string </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3722e44da877f49ee4d8107c068acf87" name="a3722e44da877f49ee4d8107c068acf87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3722e44da877f49ee4d8107c068acf87">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_ip </td>
+          <td>(</td>
+          <td class="paramtype">std::tuple&lt; T... &gt;&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перегрузка для std::tuple. </p>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Элементы выводятся как есть. В случае, если типы кортежа не одинаковы, то ошибка компиляции кода.</dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>std::tuple&lt;...&gt; </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>
